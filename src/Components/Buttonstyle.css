@@ -1,0 +1,11 @@
+.btnbg{
+    background: #111430;
+    color: azure;
+width: 134px;
+    height: 45px;
+
+    text-align: center;
+    text-decoration: none;
+    border-radius: 5px;
+    border-color: #111430;
+}
