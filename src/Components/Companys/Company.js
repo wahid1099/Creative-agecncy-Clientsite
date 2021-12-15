@@ -4,7 +4,7 @@ import {Col, Container, Row} from "react-bootstrap";
 const Company = () => {
     return (
         <div>
-            <Container className="mt-5">
+            <Container className="mt-5 mb-5">
                 <Row data-aos="fade-up"
                      data-aos-anchor-placement="top-bottom">
                     <Col md={2} sm={4} className="mt-4">

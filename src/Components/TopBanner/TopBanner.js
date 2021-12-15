@@ -5,7 +5,8 @@ import {Col, Container, Nav, Row} from "react-bootstrap";
 const topbannerbg={
     background: `url('${bg}')`,
     backgroundSize:'cover',
-   height:'680px',
+   height:'100%',
+    paddingBottom:'20px',
     backgroundRepeat:'no-repeat'
 }
 const fontstyle={
