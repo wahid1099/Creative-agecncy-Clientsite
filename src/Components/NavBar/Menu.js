@@ -21,9 +21,13 @@ const Menu = () => {
                 <Navbar.Collapse id="responsive-navbar-nav">
 
                     <Nav className="ms-auto">
-                        <Nav.Link href="#deets" className="me-4 mt-2">Home</Nav.Link>
-                        <Nav.Link  href="#memes" className="me-4 mt-2">
-                          Our Portfolio
+                        <Nav.Link  className="me-4 mt-2">
+                            <Link to="/" className="text-decoration-none text-black-50">Home</Link>
+
+                            </Nav.Link>
+                        <Nav.Link   className="me-4 mt-2">
+                            <Link to="/services" className="text-decoration-none text-black-50">Our Services</Link>
+
                         </Nav.Link>
                         <Nav.Link  href="#memes" className="me-4 mt-2">
                             Our Team
