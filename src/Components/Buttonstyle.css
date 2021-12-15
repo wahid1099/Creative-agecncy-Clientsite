@@ -9,3 +9,12 @@ width: 134px;
     border-radius: 5px;
     border-color: #111430;
 }
+
+.card:hover {
+    transform: scale(1.1);
+    transition: transform 0.2s ease;
+    box-shadow: 0 4px 6px 0 rgba(22, 22, 26, 0.18);
+    border-radius: 0;
+    border: 0;
+    cursor: pointer;
+}
