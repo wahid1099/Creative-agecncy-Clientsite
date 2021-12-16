@@ -1,8 +1,13 @@
 import React from 'react';
-import {Button, Container, Nav, Navbar, NavDropdown} from "react-bootstrap";
+import {Button, Container, Dropdown, Nav, Navbar, NavDropdown} from "react-bootstrap";
 import {Link} from "react-router-dom";
 import '../Buttonstyle.css';
+import UseAuth from "../../Hooks/UseAuth";
+import {AiOutlineLogout, FaUserAlt} from "react-icons/all";
 const Menu = () => {
+    const { user, logout ,admin} = UseAuth();
+
+
     return (
         <Navbar collapseOnSelect expand="lg">
             <Container>
@@ -35,11 +40,40 @@ const Menu = () => {
                         <Nav.Link  href="#memes" className="me-4 mt-2">
                            Contact Us
                         </Nav.Link>
-                        <Nav.Link  href="#memes" className="">
-                            <button className="btnbg">
-                                LogIn
-                            </button>
-                        </Nav.Link>
+
+
+
+
+                        {user.accessToken ?
+                            <Dropdown>
+                                <Dropdown.Toggle variant="success" id="dropdown-basic" className="mt-2">
+                                    <FaUserAlt className="ms-2 me-2" />
+                                </Dropdown.Toggle>
+
+                                <Dropdown.Menu >
+                                    {user?.accessToken  &&  <span className="text-primary ms-3"><strong>Hello {user.displayName } </strong> </span>  }
+
+                                    {user?.accessToken  &&     <Dropdown.Item as={Link} to="/dashboard">DashBoard</Dropdown.Item>}
+
+                                    <Nav.Link href="#deets"  className="text-black" as={Link} to="/login"><Button variant="danger" onClick={logout}><AiOutlineLogout/> Log Out</Button></Nav.Link>
+                                </Dropdown.Menu>
+
+                            </Dropdown> :
+
+                            <Nav.Link>
+                                <Link to="/login"  className="text-decoration-none text-black-50">
+                                    <button className="btnbg">
+                                        LogIn
+                                    </button>
+                                </Link>
+
+                            </Nav.Link>
+
+                        }
+
+
+
+
 
                     </Nav>
                     <Nav>
