@@ -37,8 +37,9 @@ const Menu = () => {
                         <Nav.Link  href="#memes" className="me-4 mt-2">
                             Our Team
                         </Nav.Link>
-                        <Nav.Link  href="#memes" className="me-4 mt-2">
-                           Contact Us
+                        <Nav.Link   className="me-4 mt-2">
+                            <Link to="/contactUs" className="text-decoration-none text-black-50">Contact Us</Link>
+
                         </Nav.Link>
 
 

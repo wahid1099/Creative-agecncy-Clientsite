@@ -2,6 +2,8 @@ import React from 'react';
 import {Col, Container, FloatingLabel, Form, Row} from "react-bootstrap";
 import  contactbg from '../../Images/Rectangle 29.png';
 import '../Buttonstyle.css';
+import Menu from "../NavBar/Menu";
+import Footer from "../Footer/Footer";
 const concactformbg={
     background: `url('${contactbg}')`,
     backgroundSize:'cover',
@@ -15,7 +17,11 @@ const fontstyle={
 
 const Contactus = () => {
     return (
+
+
+
         <div style={concactformbg}>
+
             <Container className="pt-5">
                 <Row>
                     <Col md={6} sm={12} data-aos="fade-right">
@@ -51,7 +57,9 @@ const Contactus = () => {
                     </Col>
                 </Row>
             </Container>
+
         </div>
+
     );
 };
 
