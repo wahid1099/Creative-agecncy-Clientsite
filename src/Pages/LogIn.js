@@ -1,17 +1,19 @@
 import React, {useState} from 'react';
 import Menu from "../Components/NavBar/Menu";
 import Footer from "../Components/Footer/Footer";
-import {Link, NavLink, useLocation, useNavigate } from 'react-router-dom';
+import { NavLink, useLocation,Link } from 'react-router-dom';
 import UseAuth from "../Hooks/UseAuth";
-import {Form, Button, Container, Alert} from "react-bootstrap";
+import {Form, Button, Container, Alert, Spinner} from "react-bootstrap";
 import '../../src/Components/Buttonstyle.css';
 import { FcGoogle } from "react-icons/fc";
+import { useNavigate } from "react-router-dom";
 
 const LogIn = () => {
     const [logindata,setLogindata]=useState({});
     const {user, isLoading, autherror, registerUser, loginUser, signInwithGoogle, logout}=UseAuth();
     const location=useLocation();
-    const navigate = useNavigate();
+    let navigate = useNavigate();
+    console.log(navigate);
 
 
 
@@ -65,6 +67,7 @@ const LogIn = () => {
                     <Button variant="dark" type="submit" className="w-50">
                         LogIn
                     </Button>
+                    {isLoading && <Spinner animation="border" />}
                 </Form>
                 <Button onClick={handleGoogleSignIn}  variant="outline-dark" className="mt-4 mb-3 w-50"><FcGoogle className="iconstyle"/> Continue with Google</Button>
                 <h5>Don’t have an account?  <Link to="/register">Create an account </Link></h5>

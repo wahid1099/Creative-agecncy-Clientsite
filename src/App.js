@@ -12,6 +12,10 @@ import Register from "./Pages/Register";
 import LogIn from "./Pages/LogIn";
 import AuthProvider from "./Context/AuthProvider";
 import PrivateRoute from "./PrivateRoutes/PrivateRoute";
+import DashBoard from "./Components/DashBoard/DashBoard";
+import MyOrders from "./Components/User/MyOrders";
+import AddReview from "./Components/User/AddReview";
+import Payment from "./Components/User/Payment";
 function App() {
   return (
     <div className="App">
@@ -25,6 +29,17 @@ function App() {
           <Route path="/register" element={<Register />}>
           </Route>
           <Route path="/login" element={<LogIn />}>
+          </Route>
+         {/*nested routing*/}
+          <Route path="/dashboard" element={<DashBoard />}>
+            <Route exact path="/dashboard/myorders" element={<PrivateRoute><MyOrders/></PrivateRoute>}>
+            </Route>
+
+            <Route exact path="/dashboard/addreview" element={<PrivateRoute><AddReview/></PrivateRoute>}>
+            </Route>
+            <Route exact path="/dashboard/payment" element={<PrivateRoute><Payment/></PrivateRoute>}>
+            </Route>
+
           </Route>
 
           <Route path="/services" element={<ServicePage/>}>

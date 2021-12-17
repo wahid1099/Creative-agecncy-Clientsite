@@ -18,7 +18,7 @@ const Menu = () => {
                         width="150"
                         height="48"
                         className="d-inline-block align-top"
-                        alt="React Bootstrap logo"
+                        alt="Site logo"
                     />
                     </Link>
                 </Navbar.Brand>
