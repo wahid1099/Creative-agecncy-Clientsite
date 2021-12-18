@@ -6,7 +6,7 @@ const ServicesComponent = () => {
     const [services,setServices]=useState([]);
     const [isLoading,setLoading]=useState(true);
     useEffect(()=>{
-        fetch('http://localhost:7000/services')
+        fetch('https://murmuring-tor-75574.herokuapp.com/services')
             .then(res=>res.json())
             .then(data=>{
                 setServices(data)

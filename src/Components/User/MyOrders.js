@@ -7,7 +7,7 @@ const MyOrders = () => {
     const[isLoading,setIsloading]=useState(true);
     const [success,setSucess]=useState(false);
     useEffect(()=>{
-        fetch(`http://localhost:7000/userorders?email=${user.email}`)
+        fetch(`https://murmuring-tor-75574.herokuapp.com/userorders?email=${user.email}`)
             .then(res=>res.json())
             .then(data=>{
                 setUserorders(data)

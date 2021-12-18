@@ -32,7 +32,7 @@ const AddReview = () => {
         //booking a apartment
         setSucess(false);
         setReviewadded(true);
-        fetch('http://localhost:7000/addReview', {
+        fetch('https://murmuring-tor-75574.herokuapp.com/addReview', {
             method: 'POST',
             headers: {
                 'content-type': 'application/json'

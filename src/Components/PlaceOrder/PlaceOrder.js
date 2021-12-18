@@ -14,7 +14,7 @@ const PlaceOrder = () => {
 
     const {user}=UseAuth();
     useEffect(()=>{
-        fetch(`http://localhost:7000/services/${serviceId}`)
+        fetch(`https://murmuring-tor-75574.herokuapp.com/services/${serviceId}`)
             .then(res=>res.json())
             .then(data=>{
                 setProductDetails(data)
@@ -48,7 +48,7 @@ const PlaceOrder = () => {
         //booking a apartment
         setSucess(false);
         setOrderPlaced(true);
-        fetch('http://localhost:7000/purchaseService', {
+        fetch('https://murmuring-tor-75574.herokuapp.com/purchaseService', {
             method: 'POST',
             headers: {
                 'content-type': 'application/json'

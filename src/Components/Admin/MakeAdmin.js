@@ -1,5 +1,5 @@
 import React, {useState} from 'react';
-import {Button, Form,Alert} from "react-bootstrap";
+import {Button, Form, Alert, Spinner} from "react-bootstrap";
 import UseAuth from "../../Hooks/UseAuth";
 
 const MakeAdmin = () => {
@@ -9,6 +9,7 @@ const MakeAdmin = () => {
         borderRadius:'10px'
 
     }
+    const[isLoading,setLoading]=useState(false);
     const [email, setEmail] = useState('');
     const [success, setSuccess] = useState(false);
     const { token } = UseAuth();
@@ -20,7 +21,8 @@ const MakeAdmin = () => {
 
     const handleAdminSubmit = e => {
         const user = { email };
-        fetch('https://murmuring-tundra-70437.herokuapp.com/users/admin', {
+        setLoading(true);
+        fetch('https://murmuring-tor-75574.herokuapp.com/users/admin', {
             method: 'PUT',
             headers: {
                 'authorization': `Bearer ${token}`,
@@ -31,14 +33,15 @@ const MakeAdmin = () => {
             .then(res => res.json())
             .then(data => {
                 if (data.modifiedCount) {
-
+                    console.log(data);
+                    setLoading(false);
                     setSuccess(true);
-                    e.target.reset();
                 }
             })
 
         e.preventDefault()
     }
+
 
 
     return (
@@ -52,7 +55,7 @@ const MakeAdmin = () => {
 
                    </Form.Group>
                    {success && <Alert variant="success">Made Admin successfully!</Alert>}
-
+                   {isLoading && <Spinner animation="border"/>}
                    <div className="text-start pt-1 ps-3">
                        <Button variant='success' type='submit' >Make Admin</Button>
 

@@ -11,7 +11,7 @@ const AllorderComponent = (props) => {
     const handleDelete = () => {
 
 
-        fetch(`http://localhost:7000/deleteorder/${_id}`, {
+        fetch(`https://murmuring-tor-75574.herokuapp.com/deleteorder/${_id}`, {
             method: "DELETE",
         })
             .then((res) => res.json())

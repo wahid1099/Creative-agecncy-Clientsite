@@ -88,7 +88,7 @@ const UseFirebase = () => {
     //getting admin data
 
     useEffect(() => {
-        fetch(`http://localhost:7000/users/${user.email}`)
+        fetch(`https://murmuring-tor-75574.herokuapp.com/users/${user.email}`)
             .then(res => res.json())
             .then(data => setAdmin(data.admin))
 
@@ -111,7 +111,7 @@ const UseFirebase = () => {
     const saveUser=(email,displayName,method)=>{
         const user={email,displayName};
         console.log(user);
-        fetch('http://localhost:7000/users',{
+        fetch('https://murmuring-tor-75574.herokuapp.com/users',{
             method:method,
             headers:{
                 'content-type':'application/json'

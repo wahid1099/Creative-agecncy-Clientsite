@@ -9,7 +9,7 @@ const ManageOrders = () => {
 
 
     useEffect(()=>{
-        fetch(`http://localhost:7000/allorders`)
+        fetch(`https://murmuring-tor-75574.herokuapp.com/allorders`)
             .then(res=>res.json())
             .then(data=>{
                 setAllorders(data)
